@@ -1,9 +1,5 @@
-
-
 function CreateCandidateForm() {
-  return (
-    <div>CreateCandidateForm</div>
-  )
+  return <div>CreateCandidateForm</div>;
 }
 
-export default CreateCandidateForm
+export default CreateCandidateForm;

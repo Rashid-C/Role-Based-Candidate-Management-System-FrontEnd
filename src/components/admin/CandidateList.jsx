@@ -1,9 +1,5 @@
-
-
 function CandidateList() {
-  return (
-    <div>CandidateList</div>
-  )
+  return <div>CandidateList</div>;
 }
 
-export default CandidateList
+export default CandidateList;

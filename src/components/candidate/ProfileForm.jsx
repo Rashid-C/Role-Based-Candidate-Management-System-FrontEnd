@@ -1,9 +1,5 @@
-
-
 function ProfileForm() {
-  return (
-    <div>ProfileForm</div>
-  )
+  return <div>ProfileForm</div>;
 }
 
-export default ProfileForm
+export default ProfileForm;

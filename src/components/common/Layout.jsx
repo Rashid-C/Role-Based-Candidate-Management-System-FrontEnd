@@ -1,27 +1,23 @@
-
-
-// src/components/Layout.jsx
-import { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { useAuth } from '../context/AuthContext';
+import { Fragment } from "react";
+import { Link } from "react-router-dom";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useAuth } from "../context/AuthContext";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 const Layout = ({ children }) => {
   const { user, logout } = useAuth();
 
-  const navigation = user?.role === 'admin' 
-    ? [
-        { name: 'Dashboard', href: '/admin/dashboard' },
-        { name: 'Manage Candidates', href: '/admin/candidates' },
-      ]
-    : [
-        { name: 'Profile', href: '/candidate/profile' },
-      ];
+  const navigation =
+    user?.role === "admin"
+      ? [
+          { name: "Dashboard", href: "/admin/dashboard" },
+          { name: "Manage Candidates", href: "/admin/candidates" },
+        ]
+      : [{ name: "Profile", href: "/candidate/profile" }];
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -74,8 +70,8 @@ const Layout = ({ children }) => {
                               <button
                                 onClick={logout}
                                 className={classNames(
-                                  active ? 'bg-gray-100' : '',
-                                  'block w-full px-4 py-2 text-left text-sm text-gray-700'
+                                  active ? "bg-gray-100" : "",
+                                  "block w-full px-4 py-2 text-left text-sm text-gray-700"
                                 )}
                               >
                                 Sign out
@@ -93,9 +89,7 @@ const Layout = ({ children }) => {
         )}
       </Disclosure>
       <main className="py-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {children}
-        </div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
       </main>
     </div>
   );

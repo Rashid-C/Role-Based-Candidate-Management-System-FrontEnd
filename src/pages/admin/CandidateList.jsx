@@ -1,7 +1,6 @@
-// src/pages/admin/CandidateList.jsx
-import { useState, useEffect } from 'react';
-import { adminAPI } from '../../services/api';
-import toast from 'react-hot-toast';
+import { useState, useEffect } from "react";
+import { adminAPI } from "../../services/api";
+import toast from "react-hot-toast";
 
 const CandidateList = () => {
   const [candidates, setCandidates] = useState([]);
@@ -16,23 +15,23 @@ const CandidateList = () => {
       const response = await adminAPI.getAllCandidates();
       setCandidates(response.data.data);
     } catch (error) {
-      toast.error('Error fetching candidates');
+      toast.error("Error fetching candidates");
     } finally {
       setLoading(false);
     }
   };
 
   const handleDelete = async (id) => {
-    if (!window.confirm('Are you sure you want to delete this candidate?')) {
+    if (!window.confirm("Are you sure you want to delete this candidate?")) {
       return;
     }
 
     try {
       await adminAPI.deleteCandidate(id);
-      toast.success('Candidate deleted successfully');
+      toast.success("Candidate deleted successfully");
       fetchCandidates();
     } catch (error) {
-      toast.error('Error deleting candidate');
+      toast.error("Error deleting candidate");
     }
   };
 
@@ -93,7 +92,9 @@ const CandidateList = () => {
                       )}
                     </div>
                     <div className="ml-4">
-                      <div className="font-medium text-gray-900">{candidate.fullName}</div>
+                      <div className="font-medium text-gray-900">
+                        {candidate.fullName}
+                      </div>
                       <div className="text-gray-500">{candidate.email}</div>
                     </div>
                   </div>

@@ -1,9 +1,5 @@
-
-
 function ManageCandidates() {
-  return (
-    <div>ManageCandidates</div>
-  )
+  return <div>ManageCandidates</div>;
 }
 
-export default ManageCandidates
+export default ManageCandidates;
