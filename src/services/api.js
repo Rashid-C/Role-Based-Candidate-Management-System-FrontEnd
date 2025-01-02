@@ -1,13 +1,14 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const API_URL = import.meta.env.VITE_API_URL;
+
 
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: import.meta.env.VITE_API_URL,
   headers: {
-    "Content-Type": "application/json",
+      'Content-Type': 'application/json'
   },
+  withCredentials: true
 });
 
 api.interceptors.request.use(
