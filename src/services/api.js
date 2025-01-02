@@ -39,9 +39,9 @@ api.interceptors.response.use(
 );
 
 export const authAPI = {
-  candidateLogin: (data) => api.post("/auth/candidate/login", data),
-  adminLogin: (data) => api.post("/auth/admin/login", data),
-  logout: () => api.post("/auth/logout"),
+  adminLogin: (data) => api.post('/auth/admin/login', data),
+  candidateLogin: (data) => api.post('/auth/candidate/login', data),
+  logout: () => api.post('/auth/logout')
 };
 
 export const adminAPI = {
